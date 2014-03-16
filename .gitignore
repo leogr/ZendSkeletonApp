@@ -1,3 +1,5 @@
+public/_/asset/*
+public/_/components/*
 nbproject
 ._*
 .~lock.*
@@ -8,3 +10,4 @@ nbproject
 .settings
 composer.lock
 vendor
+components

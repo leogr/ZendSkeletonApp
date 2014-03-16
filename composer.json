@@ -14,6 +14,11 @@
         "rwoverdijk/assetmanager": "1.*",
         "oyejorge/less.php": "~1.5",
         "pruno/mongo-vc": "0.5.*",
+
+		"robloach/component-installer": "*",
+		"components/jquery": "1.11.*",
+        "rogeriopradoj/respond": "*",
+        "afarkas/html5shiv": "*",
         "twbs/bootstrap": "3.1.*",
         "fortawesome/font-awesome": "4.0.*"
     },
@@ -22,5 +27,9 @@
             "type": "vcs",
             "url": "https://github.com/pruno/mongo-vc.git"
         }
-    ]
+    ],
+    "config": {
+        "component-dir": "public/_/components",
+        "component-baseurl": "/components"
+    }
 }

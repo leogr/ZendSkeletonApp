@@ -95,7 +95,22 @@ return array(
 
     'asset_manager' => array(
         'resolver_configs'  => array(
+            'collections' => array(
+                '_/asset/js/vendor.js' => array(
+                    '/jquery/jquery.min.js',
+                    '/twbs/bootstrap/dist/js/bootstrap.min.js',
+                ),
+                '_/asset/js/vendor.ie.js' => array(
+                    '/respond/dest/respond.min.js',
+                    '/html5shiv/dist/html5shiv.js',
+                ),
+            ),
+            'paths' => array(
+               __DIR__ . '/../../../public/_/components',
+               __DIR__ . '/../../../vendor',
+            ),
             'map'   => array(
+//                 '_/asset/js/jquery.min.map' => __DIR__ . '/../../../vendor/components/jquery/jquery.min.map', //TODO check if it's required
                 '_/asset/css/style.css' => __DIR__ . '/../asset/less/style.less',
                 '_/asset/fonts/fontawesome-webfont.eot'  => __DIR__ . '/../../../vendor/fortawesome/font-awesome/fonts/fontawesome-webfont.eot',
                 '_/asset/fonts/fontawesome-webfont.svg'  => __DIR__ . '/../../../vendor/fortawesome/font-awesome/fonts/fontawesome-webfont.svg',
