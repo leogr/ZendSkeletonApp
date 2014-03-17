@@ -93,8 +93,6 @@ return array(
     ),
 
     'assetic_configuration' => array(
-        'debug'          => true,
-        'buildOnRequest' => true,
         'webPath'        => 'public/_/assets',
         'basePath'       => '/_/assets',
         'default'         => array(

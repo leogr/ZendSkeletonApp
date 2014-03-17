@@ -12,14 +12,8 @@
  */
 
 return array(
-    'asset_manager' => array(
-        'caching' => array(
-            'default' => array(
-                'cache'     => 'Filesystem',  //Please, in production env, override this with FilePath using local.php!
-                'options' => array(
-                    'dir' => 'data/cache', //Please, in production env, override this with 'public' using local.php!
-                ),
-            ),
-        ),
-    ),
+    'assetic_configuration' => array(
+        'debug'          => true,
+        'buildOnRequest' => true,
+    )
 );
