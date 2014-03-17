@@ -148,6 +148,11 @@ return array(
                     'application_js'          => array(
                         'assets' => array(
                             __DIR__ . '/../../../vendor/components/jquery/jquery.js'
+                        ),
+                        'filters' => array(
+                            '?JSMinFilter' => array(
+                                'name' => 'Assetic\Filter\JSMinFilter'
+                            )
                         )
                     ),
                 ),
