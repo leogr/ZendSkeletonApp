@@ -145,7 +145,8 @@ return array(
                     ),
                     'application_js'          => array(
                         'assets' => array(
-                            __DIR__ . '/../../../vendor/components/jquery/jquery.js'
+                            __DIR__ . '/../../../vendor/components/jquery/jquery.js',
+                            __DIR__ . '/../../../vendor/twbs/bootstrap/dist/js/bootstrap.js',
                         ),
                         'filters' => array(
                             '?JSMinFilter' => array(
