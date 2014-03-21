@@ -1,6 +1,6 @@
 {
-    "name": "leogr/zf2-skeleton-app",
-    "description": "My default ZF2 Skeleton Application",
+    "name": "dmlab/skapp",
+    "description": "A fast ZF2 skeleton application",
     "license": "BSD-3-Clause",
     "keywords": [
         "framework",
