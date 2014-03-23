@@ -23,12 +23,12 @@
         "afarkas/html5shiv": "*",
         "twbs/bootstrap": "3.1.*",
         "fortawesome/font-awesome": "4.0.*",
-        "dmlab/zf2-hanger-snippet": "dev-develop"
+        "ripaclub/zf2-hanger-snippet": "dev-develop"
     },
     "repositories": [
         {
             "type": "vcs",
-            "url": "https://github.com/dmlab/zf2-hanger-snippet.git"
+            "url": "https://github.com/ripaclub/zf2-hanger-snippet.git"
         },
         {
             "type": "vcs",
