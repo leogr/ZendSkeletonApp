@@ -21,5 +21,12 @@ return array(
         'hostname'  => '127.0.0.1',
         'port'      => 9306,
         'charset'   => 'UTF8'
-    )
+    ),
+    'ga' => array(
+        'monitoring_id' => 'UA-XXXXXXXX-X',
+        'domain'        => 'yourdomain.com'
+    ),
+    'facebook' => array(
+        'appId' => '',
+    ),
 );

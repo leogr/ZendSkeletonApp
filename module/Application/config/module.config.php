@@ -162,6 +162,22 @@ return array(
             ),
         ),
     ),
+
+    'hanger_snippet' => array(
+        'snippets' => array(
+            'google-analytics' => array(
+                'config_key' => 'ga', //the config node in the global config, if any
+            ),
+            'facebook-sdk' => array(
+                'config_key' => 'facebook', //the config node in the global config, if any
+                'values' => array(
+                    'status' => true,
+                    'xfbml'  => false,
+                ),
+            )
+        ),
+    ),
+
     // Placeholder for console routes
     'console'               => array(
         'router' => array(
