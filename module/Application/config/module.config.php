@@ -56,8 +56,12 @@ return array(
             'Zend\Cache\Service\StorageCacheAbstractServiceFactory',
             'Zend\Log\LoggerAbstractServiceFactory',
         ),
+        'factories' => array(
+            'SphinxSearch\Db\Adapter\Adapter' => 'SphinxSearch\Db\Adapter\AdapterServiceFactory',
+        ),
         'aliases'            => array(
             'translator' => 'MvcTranslator',
+            'sphinxql' => 'SphinxSearch\Db\Adapter\Adapter',
         ),
     ),
     'translator'            => array(
@@ -158,6 +162,22 @@ return array(
             ),
         ),
     ),
+
+    'hanger_snippet' => array(
+        'snippets' => array(
+            'google-analytics' => array(
+                'config_key' => 'ga', //the config node in the global config, if any
+            ),
+            'facebook-sdk' => array(
+                'config_key' => 'facebook', //the config node in the global config, if any
+                'values' => array(
+                    'status' => true,
+                    'xfbml'  => false,
+                ),
+            )
+        ),
+    ),
+
     // Placeholder for console routes
     'console'               => array(
         'router' => array(

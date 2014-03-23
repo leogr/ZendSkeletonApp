@@ -1,13 +1,17 @@
-ZendSkeletonApp
+Skapp
 =======================
 
 Introduction
 ------------
-This is my skeleton application using the ZF2 MVC layer and module
-systems. This application is meant to be used as a starting place for those
+This is a skeleton application using the ZF2 MVC layer and module
+systems.
+
+This application is meant to be used as a **fast start** [ aka _/skapp/_ in out origin dialects ] place for those
 looking to get their feet wet with ZF2.
+
 This skeleton uses only composer to install dependencies and for autoloding.
-Some usefull dependencies in order to work in a Nginx/Mongo/Sphinx environment
+
+Some usefull dependencies in order to work in a Nginx/Mongo/SphinxSearch environment
 are included in composer.json.
 
 Installation
