@@ -37,5 +37,11 @@
                 "autoload": { "classmap": [ "cssmin-v3.0.1.php" ] }
             }
         }
-    ]
+    ],
+    "scripts": {
+        "post-install-cmd": [
+            "sudo chmod -R 777 public/_/assets",
+            "sudo chmod -R 777 data"
+        ]
+    }
 }
