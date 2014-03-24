@@ -16,14 +16,20 @@
         "cssmin/cssmin": "*",
         "mrclay/minify": "2.2.*",
         "pruno/mongo-vc": "0.5.*",
+        "ripaclub/sphinxsearch": ">=0.6",
         "robloach/component-installer": "*",
         "components/jquery": "1.11.*",
         "rogeriopradoj/respond": "*",
         "afarkas/html5shiv": "*",
         "twbs/bootstrap": "3.1.*",
-        "fortawesome/font-awesome": "4.0.*"
+        "fortawesome/font-awesome": "4.0.*",
+        "ripaclub/zf2-hanger-snippet": "dev-develop"
     },
     "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/ripaclub/zf2-hanger-snippet.git"
+        },
         {
             "type": "vcs",
             "url": "https://github.com/pruno/mongo-vc.git"
