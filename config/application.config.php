@@ -5,6 +5,8 @@ return array(
         'AsseticBundle',
         'HangerSnippet',
         'Application',
+        'AuthModule',
+        'FacebookModule',
     ),
 
     // These are various options for the listeners attached to the ModuleManager

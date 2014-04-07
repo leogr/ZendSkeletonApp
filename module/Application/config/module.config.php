@@ -57,6 +57,7 @@ return array(
             'Zend\Log\LoggerAbstractServiceFactory',
         ),
         'factories' => array(
+            'Zend\Session\SessionManager' => 'Zend\Session\Service\SessionManagerFactory',
             'SphinxSearch\Db\Adapter\Adapter' => 'SphinxSearch\Db\Adapter\AdapterServiceFactory',
         ),
         'aliases'            => array(

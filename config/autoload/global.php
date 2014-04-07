@@ -29,4 +29,13 @@ return array(
     'facebook' => array(
         'appId' => '',
     ),
+    'session' => array(
+        'config' => array(
+            'class' => 'Zend\Session\Config\SessionConfig',
+            'options' => array(
+                'name' => 'myapp',
+            ),
+        ),
+        'storage' => 'Zend\Session\Storage\SessionArrayStorage',
+    ),
 );
