@@ -11,11 +11,19 @@ namespace Application\Controller;
 
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
+use AuthModule\Service\InteractiveAuthServiceFactory;
 
 class IndexController extends AbstractActionController
 {
     public function indexAction()
     {
+
+//        $this->getServiceLocator()->get('Facebook');
+
+//         $this->interactiveAuth();
+
+        phpinfo();
+
         return new ViewModel();
     }
 }
