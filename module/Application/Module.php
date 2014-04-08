@@ -74,7 +74,7 @@ public function onBootstrap(MvcEvent $e)
                     unset($config['options']);
 
                     $client = new \MongoClient("mongodb://{$credential}{$hosts}", $options);
-                    $saveHandlerConfig = new MongoDBOptions($config);
+                    $saveHandlerConfig = new \Zend\Session\SaveHandler\MongoDBOptions($config);
                     $sessionHandler = new \Zend\Session\SaveHandler\MongoDB($client, $saveHandlerConfig);
 
                     return $sessionHandler;
