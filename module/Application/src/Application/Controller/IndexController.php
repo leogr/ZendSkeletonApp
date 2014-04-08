@@ -17,13 +17,6 @@ class IndexController extends AbstractActionController
 {
     public function indexAction()
     {
-
-//        $this->getServiceLocator()->get('Facebook');
-
-//         $this->interactiveAuth();
-
-        phpinfo();
-
         return new ViewModel();
     }
 }
