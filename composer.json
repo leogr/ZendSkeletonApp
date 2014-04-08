@@ -65,8 +65,8 @@
     ],
     "scripts": {
         "post-install-cmd": [
-            "chmod -R 777 public/_/assets",
-            "chmod -R 777 data"
+            "chmod -R 666 public/_/assets",
+            "chmod -R 666 data"
         ]
     }
 }
