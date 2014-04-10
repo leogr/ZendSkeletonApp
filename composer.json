@@ -15,7 +15,7 @@
         "oyejorge/less.php": "~1.5",
         "cssmin/cssmin": "*",
         "mrclay/minify": "2.2.*",
-        "ripaclub/sphinxsearch": ">=0.6",
+        "ripaclub/zf2-sphinxsearch": ">=0.6",
         "robloach/component-installer": "*",
         "components/jquery": "1.11.*",
         "rogeriopradoj/respond": "*",

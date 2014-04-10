@@ -4,6 +4,7 @@ return array(
     'modules' => array(
         'AsseticBundle',
         'HangerSnippet',
+        'SphinxSearch',
         'Application',
         'AuthModule',
         'FacebookModule',
