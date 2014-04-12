@@ -53,7 +53,7 @@ public function onBootstrap(MvcEvent $e)
                 'Zend\Session\Config\ConfigInterface' => 'Zend\Session\Service\SessionConfigFactory',
                 'Zend\Session\SessionManager'         => 'Zend\Session\Service\SessionManagerFactory',
 
-                'Zend\Session\SaveHandler\MongoDB' => function($sm) {
+                'Zend\Session\SaveHandler\MongoDB' => function ($sm) {
                     $config = $sm->get('Config');
                     $config = $config['session_save_handler_mongo'];
 
@@ -76,6 +76,7 @@ public function onBootstrap(MvcEvent $e)
 
                     $client = new \MongoClient("mongodb://{$credential}{$hosts}", $options);
                     $saveHandlerConfig = new \Zend\Session\SaveHandler\MongoDBOptions($config);
+                    $saveHandlerConfig->setSaveOptions(array('w' => true));
                     $sessionHandler = new \Zend\Session\SaveHandler\MongoDB($client, $saveHandlerConfig);
 
                     return $sessionHandler;
