@@ -21,7 +21,9 @@ public function onBootstrap(MvcEvent $e)
         $serviceManager      = $e->getApplication()->getServiceManager();
         $moduleRouteListener = new ModuleRouteListener();
         $moduleRouteListener->attach($eventManager);
-        $this->bootstrapSession($e);
+        if (!Console::isConsole()) {
+            $this->bootstrapSession($e);
+        }
     }
 
     public function bootstrapSession($e)
@@ -38,7 +40,7 @@ public function onBootstrap(MvcEvent $e)
 
     public function getServiceConfig()
     {
-        return array(
+         return array(
             'aliases' => array(
                 'Zend\Session\SaveHandler\SaveHandlerInterface' => 'Zend\Session\SaveHandler\MongoDB',
                 'Zend\Session\Storage\StorageInterface' => 'Zend\Session\Storage\SessionArrayStorage',
@@ -51,36 +53,36 @@ public function onBootstrap(MvcEvent $e)
             'factories' => array(
 
                 'Zend\Session\Config\ConfigInterface' => 'Zend\Session\Service\SessionConfigFactory',
-                'Zend\Session\SessionManager'         => 'Zend\Session\Service\SessionManagerFactory',
+                'Zend\Session\SessionManager' => 'Zend\Session\Service\SessionManagerFactory',
 
                 'Zend\Session\SaveHandler\MongoDB' => function ($sm) {
-                    $config = $sm->get('Config');
-                    $config = $config['session_save_handler_mongo'];
+                        $config = $sm->get('Config');
+                        $config = $config['session_save_handler_mongo'];
 
-                    $hosts = array_key_exists('hosts', $config) ? $config['hosts'] : 'localhost:27017';
-                    unset($config['hosts']);
+                        $hosts = array_key_exists('hosts', $config) ? $config['hosts'] : 'localhost:27017';
+                        unset($config['hosts']);
 
-                    $credential = array_key_exists('username', $config) &&
-                    array_key_exists('password', $config) ?
-                    "{$config['username']}:{$config['password']}@" :
-                        null;
+                        $credential = array_key_exists('username', $config) &&
+                        array_key_exists('password', $config) ?
+                            "{$config['username']}:{$config['password']}@" :
+                            null;
 
-                    unset($config['username'], $config['password']);
+                        unset($config['username'], $config['password']);
 
-                    $options = array_key_exists('options', $config) &&
-                    is_array($config['options']) ?
-                    $config['options'] :
-                    array();
+                        $options = array_key_exists('options', $config) &&
+                        is_array($config['options']) ?
+                            $config['options'] :
+                            array();
 
-                    unset($config['options']);
+                        unset($config['options']);
 
-                    $client = new \MongoClient("mongodb://{$credential}{$hosts}", $options);
-                    $saveHandlerConfig = new \Zend\Session\SaveHandler\MongoDBOptions($config);
-                    $saveHandlerConfig->setSaveOptions(array('w' => true));
-                    $sessionHandler = new \Zend\Session\SaveHandler\MongoDB($client, $saveHandlerConfig);
+                        $client = new \MongoClient("mongodb://{$credential}{$hosts}", $options);
+                        $saveHandlerConfig = new MongoDBOptions($config);
+                        $saveHandlerConfig->setSaveOptions(array('w' => true));
+                        $sessionHandler = new \Zend\Session\SaveHandler\MongoDB($client, $saveHandlerConfig);
 
-                    return $sessionHandler;
-                },
+                        return $sessionHandler;
+                    },
             ),
         );
     }
