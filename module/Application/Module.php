@@ -12,6 +12,7 @@ namespace Application;
 use Zend\Mvc\ModuleRouteListener;
 use Zend\Mvc\MvcEvent;
 use Zend\Session\Container;
+use Zend\Console\Console;
 
 class Module
 {
