@@ -130,6 +130,15 @@ return array(
                             'move_raw' => true,
                         )
                     ),
+                    'application_compatibility' => array(
+                        'assets' => array(
+                            __DIR__ . '/../../../vendor/afarkas/html5shiv/dist/*',
+                            __DIR__ . '/../../../vendor/rogeriopradoj/respond/dest/*',
+                        ),
+                        'options' => array(
+                            'move_raw' => true
+                        )
+                    ),
                     'application_css'  => array(
                         'assets'  => array(
                             '@application_less'
