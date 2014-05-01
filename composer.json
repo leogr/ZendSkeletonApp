@@ -22,7 +22,7 @@
         "afarkas/html5shiv": "*",
         "twbs/bootstrap": "3.1.*",
         "fortawesome/font-awesome": "4.0.*",
-        "ripaclub/zf2-hanger-snippet": "dev-develop",
+        "ripaclub/zf2-hanger-snippet": "dev-master",
         "leogr/zf2-auth-module" : "dev-develop",
         "leogr/zf2-facebook-module" : "dev-develop",
         "ripaclub/zf2-matryoshka-module" : "dev-develop"
