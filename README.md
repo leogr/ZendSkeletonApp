@@ -52,24 +52,36 @@ To setup nginx, open your `/path/to/nginx/nginx.conf` and add the [ìnclude dire
 Create a virtual host configuration file for your project under `/path/to/nginx/conf.d/project-name.tld.conf`
 it should look something like below:
 
-    server {
-        listen       80;
-        server_name  project-name.tld;
-        root /path/to/project-name/public;
-        index index.php;
-    
-        location / {
-            try_files $uri $uri/ /index.php;
-        }
-    
-        location ~* \.php$ {
-            # Pass the PHP requests to FastCGI server (php-fpm) on 127.0.0.1:9000 or using unix socket
-            fastcgi_pass   unix:/path/to/fpm-your-project.sock;
-            fastcgi_param  SCRIPT_FILENAME /path/to/project-name/public/index.php;
-            fastcgi_param  APPLICATION_ENV development;
-            include fastcgi_params;
+
+```
+server {
+        listen                          80;
+
+        server_name                     _;
+
+        access_log                      logs/project-name.access.log;
+
+        proxy_pass_header               Server;
+        root                            /var/www/nginx/project-name;
+        index                           index.php;
+
+        location ~* \.(eot|ttf|woff)$ {
+            add_header                  Access-Control-Allow-Origin *;
+            try_files                   $uri $uri/ /index.php$is_args$args;
         }
 
-    }
+        location / {
+            try_files                   $uri $uri/ /index.php$is_args$args;
+        }
+
+        location ~* .php$ {
+            fastcgi_pass                unix:/var/www/php/fpm-projectname.sock;
+            fastcgi_param               SCRIPT_FILENAME /var/www/nginx/project-name/index.php;
+            fastcgi_param               APPLICATION_ENV development;
+            include                     fastcgi_params;
+        }
+}
+```
+**Note**: This nginx config requires that you have the eot,ttf and woff mime types in yout mime.types
 
 Restart the nginx, now you should be ready to go!

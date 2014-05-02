@@ -57,6 +57,7 @@ return array(
             'Zend\Log\LoggerAbstractServiceFactory',
         ),
         'factories' => array(
+            'Zend\Session\SessionManager' => 'Zend\Session\Service\SessionManagerFactory',
             'SphinxSearch\Db\Adapter\Adapter' => 'SphinxSearch\Db\Adapter\AdapterServiceFactory',
         ),
         'aliases'            => array(
@@ -127,6 +128,15 @@ return array(
                         ),
                         'options' => array(
                             'move_raw' => true,
+                        )
+                    ),
+                    'application_compatibility' => array(
+                        'assets' => array(
+                            __DIR__ . '/../../../vendor/afarkas/html5shiv/dist/*',
+                            __DIR__ . '/../../../vendor/rogeriopradoj/respond/dest/*',
+                        ),
+                        'options' => array(
+                            'move_raw' => true
                         )
                     ),
                     'application_css'  => array(
